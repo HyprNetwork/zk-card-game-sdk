@@ -66,7 +66,7 @@ Build your games on top of example game contracts to save time and effort. The s
 | ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
 | [GameInstance.sol](https://github.com/HyprNetwork/zk-card-game-sdk/blob/main/contracts/GameInstance.sol)                  | An example of basic game contract for general card game                                    |
 | [OneTimeDrawInstance.sol](https://github.com/HyprNetwork/zk-card-game-sdk/blob/main/contracts/OneTimeDrawInstance.sol)    | An example of game contract where players draw all their hands at once, e.g. Texas Hold'em |
-| [TexasHoldemController.sol](https://github.com/HyprNetwork/zk-card-game-sdk/blob/main/examples/TexasHoldemController.sol) | A minimized implementation of Texas Hold'em using `OneTimeDrawInstance`                    |
+| [TexasHoldemController.sol](https://github.com/HyprNetwork/zk-card-game-sdk/blob/main/contracts/examples/TexasHoldemController.sol) | A minimized implementation of Texas Hold'em using `OneTimeDrawInstance`                    |
 
 ## Zkcard precompile and wasm test example
 
