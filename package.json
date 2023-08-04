@@ -1,0 +1,75 @@
+{
+    "name": "zk-card-game-sdk",
+    "version": "1.0.0",
+    "description": "## Introduction",
+    "main": "index.js",
+    "directories": {
+        "example": "examples"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/HyprNetwork/zk-card-game-sdk.git"
+    },
+    "scripts": {
+        "hardhat:dev": "yarn hardhat --network localhost",
+        "hardhat:test": "yarn hardhat --network testnet",
+        "compile": "yarn hardhat compile && yarn hardhat typechain",
+        "start": "yarn hardhat node",
+        "test": "yarn hardhat test",
+        "ie:dev": "yarn hardhat --network localhost ie",
+        "ie:test": "yarn hardhat --network testnet ie",
+        "iemock": "yarn hardhat iemock",
+        "rd:dev": "yarn hardhat --network localhost rd",
+        "rd:test": "yarn hardhat --network testnet rd",
+        "fmt": "prettier --write 'tasks/**/*.ts' 'contracts/**/*.sol' 'interfaces/**/*.sol'",
+        "lint:ts": "eslint 'tasks/**/*.ts'",
+        "lint:tsfix": "eslint 'tasks/**/*.ts' --fix",
+        "lint:sol": "solhint 'contracts/**/*.sol' 'interfaces/**/*.sol'",
+        "lint:solfix": "solhint 'contracts/**/*.sol' 'interfaces/**/*.sol' --fix",
+        "lint": "run-s lint:ts lint:sol",
+        "lint:fix": "run-s lint:tsfix lint:solfix"
+    },
+    "keywords": [
+        "zkp",
+        "poker"
+    ],
+    "author": "HyprNetwork",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/HyprNetwork/zk-card-game-sdk/issues"
+    },
+    "homepage": "https://github.com/HyprNetwork/zk-card-game-sdk#readme",
+    "devDependencies": {
+        "@nomicfoundation/hardhat-chai-matchers": "^1.0.0",
+        "@nomicfoundation/hardhat-network-helpers": "^1.0.0",
+        "@nomicfoundation/hardhat-toolbox": "^2.0.2",
+        "@nomiclabs/hardhat-ethers": "^2.0.0",
+        "@nomiclabs/hardhat-etherscan": "^3.0.0",
+        "@nomiclabs/hardhat-ganache": "^2.0.1",
+        "@openzeppelin/contracts": "^4.9.0",
+        "@typechain/ethers-v5": "^11.0.0",
+        "@typechain/hardhat": "^6.1.2",
+        "@types/chai": "^4.3.5",
+        "@types/mocha": ">=9.1.0",
+        "@typescript-eslint/eslint-plugin": "^5.59.8",
+        "@typescript-eslint/parser": "^5.59.8",
+        "chai": "^4.3.7",
+        "eslint": "^8.42.0",
+        "hardhat": "^2.14.1",
+        "hardhat-abi-exporter": "^2.10.1",
+        "hardhat-contract-sizer": "^2.9.0",
+        "hardhat-deploy": "^0.11.30",
+        "hardhat-deploy-ethers": "^0.3.0-beta.13",
+        "hardhat-diamond-abi": "^3.0.1",
+        "hardhat-gas-reporter": "^1.0.9",
+        "prettier": "^2.8.8",
+        "prettier-plugin-solidity": "^1.1.3",
+        "solidity-coverage": "^0.8.1",
+        "ts-node": "^10.9.1",
+        "typechain": "^8.2.0",
+        "typescript": "^5.1.3"
+    },
+    "dependencies": {
+        "@openzeppelin/contracts": "^4.9.0"
+    }
+}
