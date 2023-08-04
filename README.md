@@ -2,65 +2,102 @@
 
 ## Introduction
 
-Hypr provides a zero-knowledge card protocol via precompiled smart contract for on-chain games. Thanks to the support of [Geometry Research](https://geometryresearch.xyz), Hypr is able to bring this powerful tool to game developers in the web3 space.
+Introducing the Hypr zk card game SDK - a versatile toolkit empowering game developers to effortlessly create on-chain card games with zero-knowledge proof technology. Thanks to the support of [Geometry Research](https://geometryresearch.xyz).
 
 ## Features
 
 -   Define custom cards.
 
-    Developers can define their own number of cards, suites and values.
+    Developers have the flexibility to define their desired number of cards, suites, and values.
 
 -   Hide card values.
 
-    The card values are encrypted with the aggregate key and players hide the encrypted values from each other.
+    The card values undergo encryption using the aggregate key, and players conceal these encrypted values from one another.
 
 -   Zero-knowledge card shuffling.
 
-    The shuffling is done off-chain with fair randomness by every player using zero-knowledge proofs.
+    Off-chain, the shuffling process takes place, ensuring fair randomness, as each player utilizes zero-knowledge proofs.
 
 -   Zero-knowledge card revealling.
 
-    No sub-group of players can see the card values unless all players agree to reveal the cards.
+    Card values remain concealed from any subset of players, unless unanimous agreement is reached among all players to reveal the cards.
 
 -   Cheating prevention.
-    Each secret off-chain computation is proven in zero-knowledge proof and verified by on-chain smart contract.
+    Every confidential off-chain computation is verified through a zero-knowledge proof and validated by the on-chain smart contract.
 
 ## Use cases
 
-The protocol allows any on-chain card-like games including
+The protocol facilitates a wide range of on-chain card-like games, including but not limited to:
 
 -   Poker games
 -   Casino games
 -   Board games
 -   Turn-based games
 -   Card trading games
--   Any game having card models
+-   Any game that involves card models
 
-## API list
+## SDK functions
 
-Developers need only six game APIs to build games on top of Hypr platform. Pleae checkout [Solidity interface](https://github.com/HyprNetwork/zk-card-game-sdk/blob/main/interfaces/IMentalPoker.sol) for more details.
+Developers only require six game functions to construct card games on the Hypr platform. For further information, please refer to the Solidity interface. Please checkout the [Solidity interface](https://github.com/HyprNetwork/zk-card-game-sdk/blob/main/interfaces/IMentalPoker.sol) for more details.
 
-```
-function verifyKeyOwnership(bytes params, bytes pubKey, bytes memo, bytes keyProof) external view returns (bool);
-function computeAggregateKey(bytes[] pubKeys) external view returns (bytes memory);
-function mask(bytes params, bytes sharedKey, bytes encoded) external pure returns (bytes memory);
-function verifyShuffle(bytes params, bytes sharedKey, bytes[] curDeck, bytes[] newDeck, bytes shuffleProof) external view returns (bool);
-function verifyReveal(bytes params, bytes pubKey, bytes revealToken, bytes masked, bytes revealProof) external view returns (bool);
-function reveal(bytes[] revealTokens, bytes masked) external view returns (bytes memory);
+```js
+// Verify proof of ownership of a game key
+function verifyKeyOwnership(
+    bytes params,
+    bytes pubKey,
+    bytes memo,
+    bytes keyProof
+) external view returns (bool);
+
+// Compute aggregation public key
+function computeAggregateKey(
+    bytes[] pubKeys
+) external view returns (bytes memory);
+
+// Mask a playing card
+function mask(
+    bytes params,
+    bytes sharedKey,
+    bytes encoded
+) external pure returns (bytes memory);
+
+// Verify proof of shuffling of deck
+function verifyShuffle(
+    bytes params,
+    bytes sharedKey,
+    bytes[] curDeck,
+    bytes[] newDeck,
+    bytes shuffleProof
+) external view returns (bool);
+
+// Verify proof of reveal token of a card
+function verifyReveal(
+    bytes params,
+    bytes pubKey,
+    bytes revealToken,
+    bytes masked,
+    bytes revealProof
+) external view returns (bool);
+
+// Reveal a masked playing card
+function reveal(
+    bytes[] revealTokens,
+    bytes masked
+) external view returns (bytes memory);
 ```
 
 ## Contract address
 
-Above APIs will be provided via precompiled smart contract on game side chain (GSC).
+Above APIs will be provided via precompiled smart contract on Hypr.
 
 | Network     | Contract Address                             |
 | ----------- | -------------------------------------------- |
 | GSC Mainnet | `0x0000000000000000000000000000000000003000` |
 | GSC Testnet | `0x0000000000000000000000000000000000003000` |
 
-## Starter kit and examples
+## Examples
 
-Build your games on top of example game contracts to save time and effort. The starter kit includes
+Build your games on top of example game contracts to save time and effort:
 
 | Contract                                                                                                                     | Description                                                                                |
 | ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
