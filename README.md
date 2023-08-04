@@ -6,23 +6,24 @@ Introducing the Hypr zk card game SDK - a versatile toolkit empowering game deve
 
 ## Features
 
--   Define custom cards.
+-   **Define custom cards.**
 
     Developers have the flexibility to define their desired number of cards, suites, and values.
 
--   Hide card values.
+-   **Hide card values.**
 
     The card values undergo encryption using the aggregate key, and players conceal these encrypted values from one another.
 
--   Zero-knowledge card shuffling.
+-   **Zero-knowledge card shuffling.**
 
     Off-chain, the shuffling process takes place, ensuring fair randomness, as each player utilizes zero-knowledge proofs.
 
--   Zero-knowledge card revealling.
+-   **Zero-knowledge card revealling.**
 
     Card values remain concealed from any subset of players, unless unanimous agreement is reached among all players to reveal the cards.
 
--   Cheating prevention.
+-   **Cheating prevention.**
+
     Every confidential off-chain computation is verified through a zero-knowledge proof and validated by the on-chain smart contract.
 
 ## Use cases
