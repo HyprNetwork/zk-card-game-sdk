@@ -93,8 +93,8 @@ Above APIs will be provided via precompiled smart contract on Hypr.
 
 | Network     | Contract Address                             |
 | ----------- | -------------------------------------------- |
-| GSC Mainnet | `0x0000000000000000000000000000000000003000` |
-| GSC Testnet | `0x0000000000000000000000000000000000003000` |
+| Hypr Mainnet | `0x0000000000000000000000000000000000003000` |
+| Hypr Testnet | `0x0000000000000000000000000000000000003000` |
 
 ## Examples
 
